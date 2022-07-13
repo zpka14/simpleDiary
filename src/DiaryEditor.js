@@ -19,11 +19,13 @@ const DiaryEditor = ({ onCreate }) => {
 
   const handleSubmit = () => {
     if (state.author.length < 1) {
+      alert("작성자를 입력해주세요");
       authorInput.current.focus();
       return;
     }
 
     if (state.content.length < 5) {
+      alert("5글자 이상 입력해주세요");
       contentInput.current.focus();
       return;
     }
