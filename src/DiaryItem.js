@@ -38,11 +38,38 @@ const DiaryItem = ({
     }
   };
 
+  const emotionEmoji = (emotion) => {
+    let emoji;
+
+    switch (emotion) {
+      case '1':
+        emoji = '😡';
+        break;
+      case '2':
+        emoji = '😒';
+        break;
+      case '3':
+        emoji = '😐';
+        break;
+      case '4':
+        emoji = '🙂';
+        break;
+      case '5':
+        emoji = '🤩';
+        break;
+      default :
+        emoji = emotion;
+        break;
+    }
+
+    return emoji;
+  };
+
   return (
     <div className="DiaryItem">
       <div className="info">
         <span className="author_info">
-          작성자 : {author} | 감정점수 : {emotion}
+          작성자 : {author} | 감정점수 : {emotionEmoji(emotion)}
         </span>
         <br />
         <span className="date">{new Date(created_date).toLocaleString()}</span>
