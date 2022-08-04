@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 const DiaryItem = ({
   onRemove,
@@ -39,22 +39,23 @@ const DiaryItem = ({
   };
 
   const emotionEmoji = (emotion) => {
+    emotion = Number(emotion);
     let emoji;
 
     switch (emotion) {
-      case '1':
+      case 1:
         emoji = '😡';
         break;
-      case '2':
+      case 2:
         emoji = '😒';
         break;
-      case '3':
+      case 3:
         emoji = '😐';
         break;
-      case '4':
+      case 4:
         emoji = '🙂';
         break;
-      case '5':
+      case 5:
         emoji = '🤩';
         break;
       default :
@@ -100,4 +101,4 @@ const DiaryItem = ({
   );
 };
 
-export default DiaryItem;
+export default memo(DiaryItem);
